@@ -1,1 +1,4 @@
-// Coloque aqui suas actions
+export const userUpdate = (value) => ({
+  type: 'UPDATE_EMAIL',
+  payload: value,
+});
