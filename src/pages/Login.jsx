@@ -59,6 +59,11 @@ export default connect()(Login);
 
 Login.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  history: PropTypes.func.isRequired,
-  push: PropTypes.func.isRequired,
+  history: PropTypes.objectOf(PropTypes.objectOf),
+  push: PropTypes.func,
+};
+
+Login.defaultProps = {
+  history: {},
+  push: () => {},
 };
