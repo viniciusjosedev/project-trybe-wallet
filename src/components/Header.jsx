@@ -18,7 +18,7 @@ class Header extends Component {
       <header>
         <h1>TrybeWallet</h1>
         <p data-testid="email-field">{email}</p>
-        <p data-testid="total-field">{total}</p>
+        <p data-testid="total-field">{total > 0 ? total : '0.00'}</p>
         <p data-testid="header-currency-field">BRL</p>
       </header>
     );

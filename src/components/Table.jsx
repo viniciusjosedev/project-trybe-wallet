@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import middleTheAllFetchInProject from '../redux/actions/index';
 
 class Table extends Component {
+  deleteButton = (id) => {
+    const { dispatch, expenses } = this.props;
+    // aaa.splice(id, 1);
+    dispatch(middleTheAllFetchInProject('DELETE_EXPENSES', { id, expenses }));
+    // console.log(expenses);
+  };
+
   render() {
     const { expenses } = this.props;
+    console.log(expenses);
     return (
       <table>
         <thead>
@@ -37,10 +46,18 @@ class Table extends Component {
                   * parseFloat(elemento.value)).toFixed(2)}
               </td>
               <td>Real</td>
+              <td>
+                <button
+                  data-testid="delete-btn"
+                  onClick={ () => this.deleteButton(index) }
+                  type="button"
+                >
+                  Deletar
+                </button>
+              </td>
             </tr>
           </tbody>
-        )) : null}
-
+        )) : null }
       </table>
     );
   }
@@ -54,6 +71,7 @@ export default connect(mapStateToProps)(Table);
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.arrayOf),
+  dispatch: PropTypes.func.isRequired,
 };
 
 Table.defaultProps = {

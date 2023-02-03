@@ -13,6 +13,11 @@ export const addExpenses = (value) => ({
   payload: value,
 });
 
+export const deletExpenses = (value) => ({
+  type: 'DELETE_EXPENSES',
+  payload: value,
+});
+
 const middleTheAllFetchInProject = (value, addValue) => async (dispatch) => {
   const exchangeRates = await (await fetch('https://economia.awesomeapi.com.br/json/all')).json();
   if (value === 'ATT_CURRENCIES') {
@@ -20,6 +25,10 @@ const middleTheAllFetchInProject = (value, addValue) => async (dispatch) => {
     dispatch(attCurrencies(Object.keys(exchangeRates)));
   } if (value === 'ADD_EXPENSES') {
     dispatch(addExpenses({ ...addValue, exchangeRates }));
+  } if (value === 'DELETE_EXPENSES') {
+    const { id, expenses } = addValue;
+    expenses.splice(id, 1);
+    dispatch(deletExpenses(expenses));
   }
 };
 
