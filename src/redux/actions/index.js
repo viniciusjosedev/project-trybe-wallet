@@ -28,6 +28,7 @@ const middleTheAllFetchInProject = (value, addValue) => async (dispatch) => {
   } if (value === 'DELETE_EXPENSES') {
     const { id, expenses } = addValue;
     expenses.splice(id, 1);
+    // const lista = expenses.map((e, i) => ({ ...e, id: i }));
     dispatch(deletExpenses(expenses));
   }
 };
