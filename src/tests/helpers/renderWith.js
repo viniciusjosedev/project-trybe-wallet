@@ -48,14 +48,34 @@ export function renderWithRedux(component, options = {}) {
   };
 }
 
-export function renderWithRouterAndRedux(component, options = {}) {
-  const {
+// export function renderWithRouterAndRedux(component, options = {}) {
+//   const {
+//     initialEntries = ['/'],
+//     history = createMemoryHistory({ initialEntries }),
+//   } = options;
+
+//   return {
+//     ...renderWithRedux(withRouter(component, history), options),
+//     history,
+//   };
+// }
+
+export const renderWithRouterAndRedux = (
+  component,
+  {
+    initialState = {},
+    store = createStore(rootReducer, initialState, applyMiddleware(thunk)),
     initialEntries = ['/'],
     history = createMemoryHistory({ initialEntries }),
-  } = options;
-
-  return {
-    ...renderWithRedux(withRouter(component, history), options),
-    history,
-  };
-}
+  } = {},
+) => ({
+  ...render(
+    <Router history={ history }>
+      <Provider store={ store }>
+        {component}
+      </Provider>
+    </Router>,
+  ),
+  store,
+  history,
+});
