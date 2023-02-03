@@ -28,8 +28,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "test-coverage": "react-scripts test --coverage --watchAll=false",
-    "erro": "eslint --fix --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json --ext src/ .js, .jsx",
-    "lint:styles": "npx stylelint '**/*.css'"
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json --ext src/ .js, .jsx",
+    "lint:styles": "npx stylelint '**/*.css'",
+		"erro": "npm run lint -- --fix src/"
   },
   "eslintConfig": {
     "extends": "react-app"

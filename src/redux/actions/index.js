@@ -8,14 +8,18 @@ export const attCurrencies = (value) => ({
   payload: value,
 });
 
-const middleTheAllFetchInProject = (value) => (dispatch) => {
+export const addExpenses = (value) => ({
+  type: 'ADD_EXPENSES',
+  payload: value,
+});
+
+const middleTheAllFetchInProject = (value, addValue) => async (dispatch) => {
+  const exchangeRates = await (await fetch('https://economia.awesomeapi.com.br/json/all')).json();
   if (value === 'ATT_CURRENCIES') {
-    fetch('https://economia.awesomeapi.com.br/json/all')
-      .then((e) => e.json())
-      .then((e) => {
-        delete e.USDT;
-        dispatch(attCurrencies(Object.keys(e)));
-      });
+    delete exchangeRates.USDT;
+    dispatch(attCurrencies(Object.keys(exchangeRates)));
+  } if (value === 'ADD_EXPENSES') {
+    dispatch(addExpenses({ ...addValue, exchangeRates }));
   }
 };
 
