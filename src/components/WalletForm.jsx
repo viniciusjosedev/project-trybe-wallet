@@ -24,10 +24,13 @@ class WalletForm extends Component {
   };
 
   addExpenses = () => {
-    const { dispatch, expenses } = this.props;
+    const getCont = JSON.parse(localStorage.getItem('contIDs'));
+    // console.log(getCont);
+    localStorage.setItem('contIDs', JSON.stringify(getCont !== null ? getCont + 1 : 0));
+    const { dispatch } = this.props;
     const state = {
       ...this.state,
-      id: expenses.length > 0 ? expenses[expenses.length - 1].id + 1 : 0 };
+      id: getCont !== null ? getCont + 1 : 0 };
     dispatch(middleTheAllFetchInProject('ADD_EXPENSES', state));
     this.setState({
       value: '',
@@ -39,7 +42,7 @@ class WalletForm extends Component {
   };
 
   render() {
-    const { currencies, expenses } = this.props;
+    const { currencies, expenses, idToEdit, editor } = this.props;
     const { value,
       description, currency, method, tag } = this.state;
     return (
@@ -110,8 +113,9 @@ class WalletForm extends Component {
         <button
           type="button"
           onClick={ () => this.addExpenses() }
+          data-testid={ editor ? 'edit-btn' : null }
         >
-          Adicionar despesa
+          {editor ? 'Editar despesa' : 'Adicionar Despesa'}
         </button>
       </>
     );
@@ -121,6 +125,8 @@ class WalletForm extends Component {
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
   expenses: state.wallet.expenses,
+  idToEdit: state.wallet.idToEdit,
+  editor: state.wallet.editor,
 });
 
 export default connect(mapStateToProps)(WalletForm);
@@ -129,6 +135,8 @@ WalletForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
   currencies: PropTypes.arrayOf(PropTypes.arrayOf),
   expenses: PropTypes.arrayOf(PropTypes.arrayOf),
+  idToEdit: PropTypes.number.isRequired,
+  editor: PropTypes.bool.isRequired,
 };
 
 WalletForm.defaultProps = {

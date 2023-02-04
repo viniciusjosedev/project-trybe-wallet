@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import middleTheAllFetchInProject from '../redux/actions/index';
+import middleTheAllFetchInProject, { editExpenses } from '../redux/actions/index';
 
 class Table extends Component {
   deleteButton = (id) => {
     const { dispatch, expenses } = this.props;
-    // aaa.splice(id, 1);
     dispatch(middleTheAllFetchInProject('DELETE_EXPENSES', { id, expenses }));
-    // console.log(expenses);
+  };
+
+  editButton = (id) => {
+    const { dispatch } = this.props;
+    console.log(id);
+    dispatch(editExpenses(id));
   };
 
   render() {
     const { expenses } = this.props;
-    console.log(expenses);
+    // console.log(expenses);
     return (
       <table>
         <thead>
@@ -29,8 +33,8 @@ class Table extends Component {
             <th>Editar/Excluir</th>
           </tr>
         </thead>
-        {expenses.length > 0 ? expenses.map((elemento, index) => (
-          <tbody key={ index }>
+        {expenses.length > 0 ? expenses.map((elemento) => (
+          <tbody key={ elemento.id }>
             <tr>
               <td>{elemento.description}</td>
               <td>{elemento.tag}</td>
@@ -49,10 +53,17 @@ class Table extends Component {
               <td>
                 <button
                   data-testid="delete-btn"
-                  onClick={ () => this.deleteButton(index) }
+                  onClick={ () => this.deleteButton(elemento.id) }
                   type="button"
                 >
                   Deletar
+                </button>
+                <button
+                  data-testid="edit-btn"
+                  type="button"
+                  onClick={ () => this.editButton(elemento.id) }
+                >
+                  Editar
                 </button>
               </td>
             </tr>

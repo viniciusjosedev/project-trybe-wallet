@@ -13,6 +13,8 @@ const wallet = (state = STATE_INITAL, actions) => {
     return ({ ...state, expenses: [...state.expenses, actions.payload] });
   case ('DELETE_EXPENSES'):
     return ({ ...state, expenses: [...actions.payload] });
+  case ('EDIT_EXPENSES'):
+    return ({ ...state, idToEdit: actions.payload, editor: true });
   default:
     return state;
   }
