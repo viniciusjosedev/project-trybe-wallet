@@ -28,6 +28,10 @@ export const attExpenses = (value) => ({
   payload: value,
 });
 
+export const attConstIDs = () => ({
+  type: 'ATT_CONSTIDS',
+});
+
 const middleTheAllFetchInProject = (value, addValue) => async (dispatch) => {
   const exchangeRates = await (await fetch('https://economia.awesomeapi.com.br/json/all')).json();
   if (value === 'ATT_CURRENCIES') {

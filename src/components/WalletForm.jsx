@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import middleTheAllFetchInProject from '../redux/actions';
+import middleTheAllFetchInProject, { attConstIDs } from '../redux/actions';
 
 class WalletForm extends Component {
   state = {
@@ -26,13 +26,10 @@ class WalletForm extends Component {
   };
 
   addExpenses = () => {
-    const getCont = JSON.parse(localStorage.getItem('contIDs'));
-    // console.log(getCont);
-    localStorage.setItem('contIDs', JSON.stringify(getCont !== null ? getCont + 1 : 0));
-    const { dispatch } = this.props;
+    const { dispatch, contID } = this.props;
     const state = {
       ...this.state,
-      id: getCont !== null ? getCont + 1 : 0 };
+      id: contID + 1 };
     dispatch(middleTheAllFetchInProject('ADD_EXPENSES', state));
     this.setState({
       value: '',
@@ -41,6 +38,7 @@ class WalletForm extends Component {
       method: 'Dinheiro',
       tag: 'Alimentação',
     });
+    dispatch(attConstIDs());
   };
 
   editExpenses = () => {
@@ -139,6 +137,7 @@ const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
   idToEdit: state.wallet.idToEdit,
   editor: state.wallet.editor,
+  contID: state.contIDs.contID,
 });
 
 export default connect(mapStateToProps)(WalletForm);
