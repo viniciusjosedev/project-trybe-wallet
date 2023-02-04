@@ -42,7 +42,7 @@ class WalletForm extends Component {
   };
 
   render() {
-    const { currencies, expenses, idToEdit, editor } = this.props;
+    const { currencies, expenses, editor } = this.props;
     const { value,
       description, currency, method, tag } = this.state;
     return (
@@ -135,7 +135,7 @@ WalletForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
   currencies: PropTypes.arrayOf(PropTypes.arrayOf),
   expenses: PropTypes.arrayOf(PropTypes.arrayOf),
-  idToEdit: PropTypes.number.isRequired,
+  // idToEdit: PropTypes.number.isRequired,
   editor: PropTypes.bool.isRequired,
 };
 
