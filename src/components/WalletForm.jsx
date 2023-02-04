@@ -148,6 +148,7 @@ WalletForm.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.arrayOf),
   idToEdit: PropTypes.number.isRequired,
   editor: PropTypes.bool.isRequired,
+  contID: PropTypes.number.isRequired,
 };
 
 WalletForm.defaultProps = {
