@@ -15,6 +15,8 @@ const wallet = (state = STATE_INITAL, actions) => {
     return ({ ...state, expenses: [...actions.payload] });
   case ('EDIT_EXPENSES'):
     return ({ ...state, idToEdit: actions.payload, editor: true });
+  case ('ATT_EXPENSES'):
+    return ({ ...state, expenses: [...actions.payload] });
   default:
     return state;
   }

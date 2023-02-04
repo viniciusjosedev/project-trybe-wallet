@@ -13,8 +13,10 @@ class WalletForm extends Component {
   };
 
   componentDidMount() {
+    const NUMBER_INITIAL = -1;
     const { dispatch } = this.props;
     dispatch(middleTheAllFetchInProject('ATT_CURRENCIES'));
+    localStorage.setItem('contIDs', JSON.stringify(NUMBER_INITIAL));
   }
 
   handleChange = ({ target: { value, name } }) => {
@@ -39,6 +41,16 @@ class WalletForm extends Component {
       method: 'Dinheiro',
       tag: 'Alimentação',
     });
+  };
+
+  editExpenses = () => {
+    const { expenses, idToEdit, dispatch } = this.props;
+    const states = this.state;
+    let index;
+    expenses.forEach((e, i) => { if (e.id === idToEdit) index = i; });
+    // console.log(index);
+    // console.log(indice);
+    dispatch(middleTheAllFetchInProject('ATT_EXPENSES', { expenses, index, states }));
   };
 
   render() {
@@ -112,7 +124,7 @@ class WalletForm extends Component {
         </select>
         <button
           type="button"
-          onClick={ () => this.addExpenses() }
+          onClick={ editor ? () => this.editExpenses() : () => this.addExpenses() }
           data-testid={ editor ? 'edit-btn' : null }
         >
           {editor ? 'Editar despesa' : 'Adicionar Despesa'}
@@ -135,7 +147,7 @@ WalletForm.propTypes = {
   dispatch: PropTypes.func.isRequired,
   currencies: PropTypes.arrayOf(PropTypes.arrayOf),
   expenses: PropTypes.arrayOf(PropTypes.arrayOf),
-  // idToEdit: PropTypes.number.isRequired,
+  idToEdit: PropTypes.number.isRequired,
   editor: PropTypes.bool.isRequired,
 };
 

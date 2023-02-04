@@ -23,6 +23,11 @@ export const editExpenses = (value) => ({
   payload: value,
 });
 
+export const attExpenses = (value) => ({
+  type: 'ATT_EXPENSES',
+  payload: value,
+});
+
 const middleTheAllFetchInProject = (value, addValue) => async (dispatch) => {
   const exchangeRates = await (await fetch('https://economia.awesomeapi.com.br/json/all')).json();
   if (value === 'ATT_CURRENCIES') {
@@ -34,6 +39,11 @@ const middleTheAllFetchInProject = (value, addValue) => async (dispatch) => {
     const { id, expenses } = addValue;
     const filtro = expenses.filter((elemento) => elemento.id !== id);
     dispatch(deletExpenses(filtro));
+  } if (value === 'ATT_EXPENSES') {
+    const { expenses, index, states } = addValue;
+
+    expenses[index] = { ...expenses[index], ...states };
+    dispatch(attExpenses(expenses));
   }
 };
 
