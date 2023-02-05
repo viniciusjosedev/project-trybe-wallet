@@ -1,0 +1,70 @@
+* {
+	margin: 0px;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background-image: url('./images/imageBackground.svg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+
+#divLogin {
+	background-color: white;
+	width: 525px;
+	height: 356px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#img {
+	margin-bottom: 43.83px;
+}
+
+.inputs {
+	width: 330px;
+	height: 40px;
+	left: 475px;
+	top: 360px;
+	padding-left: 16px;
+	margin-bottom: 10px;
+	outline: 0;
+	border: 1px solid blue;
+	border-radius: 5px;
+	color: blue;
+}
+
+.inputs::placeholder {
+	color: blue;
+}
+
+button {
+	width: 354px;
+	height: 40px;
+	background-color: rgba(0, 59, 229, 1);
+	color: white;
+	outline: 0;
+	border: 0;
+	border-radius: 5px;
+
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 14px;
+}
+
+
+

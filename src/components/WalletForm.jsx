@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import middleTheAllFetchInProject, { attConstIDs } from '../redux/actions';
+import middleTheAllFetchInProject, { attConstIDs } from '../redux/actions/index.js';
 
 class WalletForm extends Component {
   state = {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import middleTheAllFetchInProject, { editExpenses } from '../redux/actions/index';
+import middleTheAllFetchInProject, { editExpenses } from '../redux/actions/index.js';
 
 class Table extends Component {
   deleteButton = (id) => {

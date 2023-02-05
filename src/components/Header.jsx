@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import style from '../style/Header.module.css';
 
 class Header extends Component {
   render() {
@@ -15,7 +16,7 @@ class Header extends Component {
       }
     }
     return (
-      <header>
+      <header id={ style.header }>
         <h1>TrybeWallet</h1>
         <p data-testid="email-field">{email}</p>
         <p data-testid="total-field">{total > 0 ? total : '0.00'}</p>
