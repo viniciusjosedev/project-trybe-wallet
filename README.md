@@ -1,7 +1,7 @@
-<h1 align='center' id='Título-e-Imagem-de-capa'> TrybeTunes</h1>
+<h1 align='center' id='Título-e-Imagem-de-capa'>TrybeWallet</h1>
 
 <p align='center'>
-<img src='./src/style/images/TrybeTunes.png'></img>
+<img src='https://setimo-projeto.surge.sh/static/media/logoTrybeWallet.df8281234c226101cdad94feb42ea401.svg' width="502" heigth="118"/>
 </p>
 
 
@@ -11,7 +11,7 @@
 <img src='https://img.shields.io/badge/STATUS-FINALIZADO-Green' width='250px'></img>
 </p>
 
-<h2>Deploy: https://sexto-projeto.surge.sh</h2>
+<h2>Deploy: https://setimo-projeto.surge.sh</h2>
 
 </br>
 
