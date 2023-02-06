@@ -18,13 +18,11 @@
 ## Descrição do projeto
 
 ### Projeto realizado mediante a necessidade da prática em conceitos inicialmente abordados de forma teórica.
-### Neste projeto em específico, pratiquei ainda mais a forma de se desenvolver uma aplicação em React. Usando componentes de classes, e junto com eles, tambem usei os conhecimentos de ciclos de vida de um componente.
+### Neste projeto em específico, pratiquei ainda mais a forma de se desenvolver uma aplicação em React. Usando componentes de classes, e junto com eles, tambem usei os conhecimentos de redux, para manipular estados globais na aplicação.
 ### Além disso, pratiquei requisições para API's, junto com isso, veio a necessidade de tratar essas requisições como uma Promise e então encaminhar os resultados para a tela do usuário.
-### API('s) usada(s): 
+### API('s) usada(s):
 
-### End-Point para albuns: https://itunes.apple.com/search?entity=album&term=${artistNameURL}&attribute=allArtistTerm - :heavy_check_mark:
-### End-Point para músicas: https://itunes.apple.com/lookup?id=${id}&entity=song - :heavy_check_mark:
-
+### End-Point para conversor de moedas: https://economia.awesomeapi.com.br/json/all - :heavy_check_mark:
 
 ## :hammer: Funcionalidades :hammer:
 
