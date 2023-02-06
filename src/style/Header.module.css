@@ -1,3 +1,48 @@
 #header {
-	background-color: red;
+	/* background-color: red; */
+	display: flex;
+	width: 100%;
+	margin-top: 56.99px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#divCoin {
+	display: flex;
+	align-items: center;
+}
+
+#p {
+	margin-left: 10px;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 14px;
+	
+	color: #003BE5;
+}
+
+#span {
+	font-weight: 400;
+	font-style: normal;
+	font-size: 14px;
+	line-height: 14px;
+	color: #003BE5;
+}
+
+#divProfile {
+	/* background-color: red; */
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+#pEmail {
+	color: #2FC18C;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 14px;
+	margin-left: 8.75px;
+	margin-top: 6px;
 }

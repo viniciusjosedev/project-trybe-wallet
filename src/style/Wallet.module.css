@@ -1,0 +1,37 @@
+#main {
+	/* background-color: red; */
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+#divBranco {
+	background-color: white;
+	width: 1037px;
+	height: 385px;
+  position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #FFFFFF;
+	box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
+	border-radius: 10px;
+}
+
+#divAzul {
+	width: 1155px;
+	height: 464px;
+	background: #003BE5;
+	box-shadow: -4px 9px 13px rgba(3, 107, 82, 0.3);
+	border-radius: 10px;
+	margin-top: 161px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+
+

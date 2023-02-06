@@ -52,7 +52,7 @@ body {
 	color: blue;
 }
 
-button {
+#button {
 	width: 354px;
 	height: 40px;
 	background-color: rgba(0, 59, 229, 1);

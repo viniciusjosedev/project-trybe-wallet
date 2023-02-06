@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import middleTheAllFetchInProject, { editExpenses } from '../redux/actions/index.js';
+import middleTheAllFetchInProject, { editExpenses } from '../redux/actions/index';
+import style from '../style/Table.module.css';
 
 class Table extends Component {
   deleteButton = (id) => {
@@ -19,18 +20,18 @@ class Table extends Component {
     const { expenses } = this.props;
     // console.log(expenses);
     return (
-      <table>
-        <thead>
+      <table id={ style.table }>
+        <thead id={ style.teste }>
           <tr>
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
-            <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
+            <th className={ style.theader }>Descrição |</th>
+            <th className={ style.theader }>Tag</th>
+            <th className={ style.theader }>Método de pagamento</th>
+            <th className={ style.theader }>Valor</th>
+            <th className={ style.theader }>Moeda</th>
+            <th className={ style.theader }>Câmbio utilizado</th>
+            <th className={ style.theader }>Valor convertido</th>
+            <th className={ style.theader }>Moeda de conversão</th>
+            <th className={ style.theader }>Editar/Excluir</th>
           </tr>
         </thead>
         {expenses.length > 0 ? expenses.map((elemento) => (

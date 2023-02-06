@@ -49,7 +49,9 @@ class Login extends React.Component {
           </label>
           <button
             type="button"
+            id={ style.button }
             disabled={ disabled }
+            style={ { backgroundColor: disabled ? 'grey' : null } }
             onClick={ () => this.clickFunc() }
           >
             Entrar

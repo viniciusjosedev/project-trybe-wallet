@@ -1,0 +1,11 @@
+#table {
+	background-color: red;
+	margin-top: 265px;
+	width: 1040px;
+}
+
+th {
+	/* border: 1px solid black; */
+	border-collapse: collapse;
+	padding: 5px 2px;
+}
