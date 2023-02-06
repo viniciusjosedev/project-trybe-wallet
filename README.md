@@ -26,21 +26,18 @@
 
 ## :hammer: Funcionalidades :hammer:
 
-### A aplicação se inicia com uma tela de loading, logo em seguida tem-se uma tela de Login.
-### Quando logado, a págia é redirecionada para a pagina inicial do site pós login. Lá o usuário tem acesso a 3 menus na barra de navegação, são eles: Pesquisar, Favoritos e Perfil respectivamente.
-### A página e pesquisa tem como objetivo pegar o texto colocado pelo usuário no input e trazer os resultados referente a pesquisa. Todos os resultados são em forma de álbuns ou em forma de musica single (que também se comporta visualmente como um álbum).
-### Quando clicado em algum álbum, o usuário é redirecionado para o album da mesma, onde pode favoritas a(s) musica(s).
-### A página de favoritos tem todas as musicas que o usuário favoritas.
-### A página de profile tem todos os dados do usuário, tendo como função um botão de alterar dados, que quando clicado, é redirecionado para uma págia de editar dados. Além deste botão, a mesma tem uma função de logout, onde quando clicado, é redirecionado para a página de login (caso o usuário não faça logout, todos os acessos á página entraram diretamente na página de pesquisa, fazendo-se um login automático).
+### A aplicação se inicia com a tela de login.
+### Quando logado, a págia é redirecionada para a pagina inicial do site pós login. Lá o usuário poderá desfrutar da funcionalidades de adicionar, ler, editar e remover itens em sua carteira.
+### A aplicação tem o intuito de treinar os conhecimentos de estado global com redux, entregando funcionalidades de conversão de moedas para a carteira. Sempre fazendo a conversão de moedas para o Real, no esquema Moeda Estrangeira/Real Brasileiro
 
 ## :computer: Tecnologias/Linguagens utilizadas :computer:
 
 ### Tecnologias: - HTML5, CSS6 e JS6 - :heavy_check_mark:
-### Bibliotecas: - React, react-router-dom@v5, bootstrap@v5, reactstrap@v9 e prop-types@15 - :heavy_check_mark:
+### Bibliotecas: - React, react-router-dom@v5, prop-types@15, redux@4.2, react-redux@8.0 e redux-thunk@2.4 - :heavy_check_mark:
 
 ## Pessoas Desenvolvedoras do Projeto.
-### Projeto realizado em conjunto com a empresa de tecnologia Trybe, que foi a responsável pela criação dos testes com o RTL (react test library), fazendo-se assim, toda a estrutura necessária para um bom desenvolvimento orientado a testes (TDD).
-### Além dos testes, todos os arquivos criados no diretorio src/services são de autória da Trybe, assim como todos os scripts do package.json, com excessão do "error': 'npm run lint -- --fix" (linha 27).
-### Todos os demais arquivos e diretórios do projeto são de autoria minha, isso inclui: src/components, src/pages, src/style. Os demais arquivos soltos na pasta src/ também são de minha autoria, isso inclui: App.jsx, index.js.
+### Projeto realizado em conjunto com a empresa de tecnologia Trybe, que foi a responsável pela criação dos testes com o Cypress, fazendo-se assim, toda a estrutura necessária para um bom desenvolvimento orientado a testes (TDD).
+### Além dos testes com o Cypress, toda a estrutura inicial do projeto foram feitas pela Trybe, isso inclui: todos os scripts no packge.json, estrutura inicial das pastas e arquivos, os arquivos mockData.js, renderWith.js.
+### Todas os demais adições dos arquivos/diretórios do projeto são de autoria minha, isso inclui: src/components, src/pages, src/style, src/tests. As alterações dos demais arquivos soltos na pasta src/ também são de minha autoria, isso inclui: App.jsx, index.js.
 ##### OBS 1: O arquivo setupTests.js já vem como default com o React na instalação feita (npx create-react-app .).
-##### OBS 2: Todos os testes de com o RTL foram devidamente apagados, esta ação envolve proteger a autoria de código, respeitando assim as normas e regras internas da empresa de tecnologia Trybe.
+##### OBS 2: Todos os testes de com o Cypress foram devidamente apagados, esta ação envolve proteger a autoria de código, respeitando assim as normas e regras internas da empresa de tecnologia Trybe.
