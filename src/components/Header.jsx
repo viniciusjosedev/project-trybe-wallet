@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import style from '../style/Header.module.css';
+import imageLogo from '../style/images/logoTrybeWallet.svg';
+import imageCoin from '../style/images/moedas.svg';
+import imageProfile from '../style/images/profile.svg';
 
 class Header extends Component {
   render() {
@@ -17,10 +20,31 @@ class Header extends Component {
     }
     return (
       <header id={ style.header }>
-        <h1>TrybeWallet</h1>
-        <p data-testid="email-field">{email}</p>
-        <p data-testid="total-field">{total > 0 ? total : '0.00'}</p>
-        <p data-testid="header-currency-field">BRL</p>
+        <img src={ imageLogo } alt="imageLogo" id={ style.img } />
+        <div id={ style.divCoin }>
+          <img src={ imageCoin } alt="imageCoin" />
+          <p
+            id={ style.p }
+            data-testid="total-field"
+          >
+            Total de despesas:
+            {' '}
+            <span id={ style.span }>
+              {total > 0 ? total : '0.00'}
+              {' '}
+              BRL
+            </span>
+          </p>
+        </div>
+        <div id={ style.divProfile }>
+          <img src={ imageProfile } alt="ImageProfile" />
+          <p
+            id={ style.pEmail }
+            data-testid="email-field"
+          >
+            {email}
+          </p>
+        </div>
       </header>
     );
   }

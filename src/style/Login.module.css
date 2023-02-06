@@ -8,7 +8,8 @@ body {
 	height: 100vh;
 	background-image: url('./images/imageBackground.svg');
 	background-size: cover;
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
+	/* padding: 20px; */
 }
 
 #main {
@@ -52,7 +53,7 @@ body {
 	color: blue;
 }
 
-button {
+#button {
 	width: 354px;
 	height: 40px;
 	background-color: rgba(0, 59, 229, 1);
